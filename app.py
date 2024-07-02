@@ -1,4 +1,6 @@
-from main import *
+from gui import *
+import json
+
 
 data_file = open('data.json')
 data = json.load(data_file)
@@ -34,7 +36,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-        self.retranslateUi(self)
+        self.retranslateUi()
 
 
     def retranslateUi(self):
