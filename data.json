@@ -1,0 +1,19 @@
+{
+    "06:00 AM" : "wake up",
+    "06:30 AM" : "morning run",
+    "07:00 AM" : "breakfast",
+    "10:00 AM" : "work",
+    "11:00 AM" : "journal",
+    "04:00 PM" : "gym",
+    "09:10 PM" : "dinner",
+    "09:20 PM" : "dinner",
+    "09:30 PM" : "dinner",
+    "09:40 PM" : "dinner",
+    "09:50 PM" : "dinner",
+    "09:60 PM" : "dinner",
+    "09:70 PM" : "dinner",
+    "09:80 PM" : "dinner",
+    "09:90 PM" : "dinner",
+    "09:120 PM" : "dinner",
+    "10:00 PM" : "sleep"
+}
