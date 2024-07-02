@@ -1,103 +1,69 @@
-import json
-from PySide6.QtCore import Qt, QSize
-from PySide6.QtWidgets import (
-    QApplication,
-    QHBoxLayout,
-    QLabel,
-    QMainWindow,
-    QPushButton,
-    QStackedLayout,
-    QVBoxLayout,
-    QGridLayout,
-    QWidget,
-)
-            
-from PySide6.QtGui import QPalette, QColor
+from main import *
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+data_file = open('data.json')
+data = json.load(data_file)
 
-#        self.setWindowTitle("My App")
-        self.setMinimumSize(QSize(400,300))
+time=[]
+task=[]
 
-        pagelayout = QHBoxLayout(self)
+for key,value in data.items(): # convert into dict items
+     time.append(key)
+     task.append(value)
 
-# adding buttons 
-        button_layout = QVBoxLayout()
-
-        btn = QPushButton("schedule")
-        btn.pressed.connect(self.activate_tab_1)
-#        btn.setFlat(True)
-        button_layout.addWidget(btn)
-
-        btn = QPushButton("timer")
-        btn.pressed.connect(self.activate_tab_2)
-#        btn.setFlat(True)
-        button_layout.addWidget(btn)
-
-        pagelayout.addLayout(button_layout)
- 
-
-# adding layouts corresponding to button clicks
-  
-        self.option_layout = QStackedLayout()
-
-  # adding two layouts in stack layout  
-        schedule = QGridLayout()
-        timer = QVBoxLayout()
-
-  #schedule
-      
-        data_file = open('data.json')
-        data = json.load(data_file)
-
-        time=[]
-        task=[]
-
-        for key,value in data.items(): # convert into dict items
-            time.append(key)
-            task.append(value)
-
-      #col_0 = time
-
-        for i in range(len(time)):
+'''
+     #col_0 = time
+for i in range(len(time)):
             timeWidget = QLabel()
             timeWidget.setText(time[i])
             timeWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
             schedule.addWidget(timeWidget,i,0)
 
-  
       #col_1 = schedule
-    
-        for i in range(len(task)):
+for i in range(len(task)):
             taskWidget = QLabel()
             taskWidget.setText(task[i])
             taskWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
             schedule.addWidget(taskWidget,i,1)
+'''
 
-        schedule_widget = QWidget()
-        schedule_widget.setLayout(schedule)
+class MainWindow(QMainWindow, Ui_MainWindow):
+    
+    def __init__(self) :
+        super().__init__()
+        self.setupUi(self)
 
-        self.option_layout.addWidget(schedule_widget)
+        self.retranslateUi(self)
 
 
-  #timer
-  
-        pagelayout.addLayout(self.option_layout)
+    def retranslateUi(self):
+        self.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
 
-        pagewidget = QWidget()   
-        pagewidget.setLayout(pagelayout)
-        self.setCentralWidget(pagewidget)
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Task", None))
 
-    def activate_tab_1(self):
-        self.option_layout.setCurrentIndex(0)
-
-    def activate_tab_2(self):
-        self.option_layout.setCurrentIndex(1)
-
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_12.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_14.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+    
 
 app = QApplication([])
 
@@ -107,4 +73,3 @@ window.show()
 app.exec()
 
 
-    
