@@ -19,8 +19,19 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QVBoxLayo
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
     QWidget)
 
+from edit import *
+
+'''            
+        self.buttonBox_menu = QDialogButtonBox(self.page)
+        self.buttonBox_menu.setObjectName(u"buttonBox")
+        self.buttonBox_menu.setGeometry(QRect(290, 20, 81, 241))
+        self.buttonBox_menu.setOrientation(Qt.Orientation.Vertical)
+        self.buttonBox_menu.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
+
+
+'''
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def setupUiGui(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
        
@@ -84,108 +95,107 @@ class Ui_MainWindow(object):
         self.gridLayout = QGridLayout(self.page)
         self.gridLayout.setObjectName(u"gridLayout")
 
-        self.label = QLabel(self.page)
-        self.label.setObjectName(u"label")
-        self.label.setScaledContents(False)
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.label0 = QLabel(self.page)
+        self.label0.setObjectName(u"label_0")
+        self.label0.setScaledContents(False)
+        self.label0.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label0, 0, 0, 1, 1)
 
-        self.label_2 = QLabel(self.page)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setScaledContents(False)
-        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
+        self.label1 = QLabel(self.page)
+        self.label1.setObjectName(u"label_1")
+        self.label1.setScaledContents(False)
+        self.label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label1, 1, 0, 1, 1)
 
-        self.label_3 = QLabel(self.page)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setScaledContents(False)
-        self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.label2 = QLabel(self.page)
+        self.label2.setObjectName(u"label_2")
+        self.label2.setScaledContents(False)
+        self.label2.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label2, 2, 0, 1, 1)
 
-        self.label_4 = QLabel(self.page)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setScaledContents(False)
-        self.label_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_4, 3, 0, 1, 1)
+        self.label3 = QLabel(self.page)
+        self.label3.setObjectName(u"label_3")
+        self.label3.setScaledContents(False)
+        self.label3.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label3, 3, 0, 1, 1)
 
-        self.label_5 = QLabel(self.page)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setScaledContents(False)
-        self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_5, 4, 0, 1, 1)
+        self.label4 = QLabel(self.page)
+        self.label4.setObjectName(u"label_4")
+        self.label4.setScaledContents(False)
+        self.label4.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label4, 4, 0, 1, 1)
 
-        self.label_6 = QLabel(self.page)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setScaledContents(False)
-        self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_6, 5, 0, 1, 1)
+        self.label5 = QLabel(self.page)
+        self.label5.setObjectName(u"label_5")
+        self.label5.setScaledContents(False)
+        self.label5.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label5, 5, 0, 1, 1)
 
-        self.label_7 = QLabel(self.page)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setScaledContents(False)
-        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_7, 6, 0, 1, 1)
+        self.label6 = QLabel(self.page)
+        self.label6.setObjectName(u"label_6")
+        self.label6.setScaledContents(False)
+        self.label6.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label6, 6, 0, 1, 1)
 
-        self.label_8 = QLabel(self.page)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setScaledContents(False)
-        self.label_8.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_8, 7, 0, 1, 1)
-
-
-        self.label_9 = QLabel(self.page)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setScaledContents(False)
-        self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_9, 8, 0, 1, 1)
-
-        self.label_10 = QLabel(self.page)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setScaledContents(False)
-        self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.gridLayout.addWidget(self.label_10, 9, 0, 1, 1)
+        self.label7 = QLabel(self.page)
+        self.label7.setObjectName(u"label_7")
+        self.label7.setScaledContents(False)
+        self.label7.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label7, 7, 0, 1, 1)
 
 
-        self.pushButton = QPushButton(self.page)
-        self.pushButton.setObjectName(u"pushButton")
-        self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
+        self.label8 = QLabel(self.page)
+        self.label8.setObjectName(u"label_8")
+        self.label8.setScaledContents(False)
+        self.label8.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label8, 8, 0, 1, 1)
 
-        self.pushButton_2 = QPushButton(self.page)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.gridLayout.addWidget(self.pushButton_2, 1, 1, 1, 1)
+        self.label9 = QLabel(self.page)
+        self.label9.setObjectName(u"label_9")
+        self.label9.setScaledContents(False)
+        self.label9.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.gridLayout.addWidget(self.label9, 9, 0, 1, 1)
 
-        self.pushButton_3 = QPushButton(self.page)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-        self.gridLayout.addWidget(self.pushButton_3, 2, 1, 1, 1)
+        self.pushButton0 = QPushButton(self.page)
+        self.pushButton0.setObjectName(u"pushButton_0")
+        self.gridLayout.addWidget(self.pushButton0, 0, 1, 1, 1)
 
-        self.pushButton_4 = QPushButton(self.page)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.gridLayout.addWidget(self.pushButton_4, 3, 1, 1, 1)
+        self.pushButton1 = QPushButton(self.page)
+        self.pushButton1.setObjectName(u"pushButton_1")
+        self.gridLayout.addWidget(self.pushButton1, 1, 1, 1, 1)
 
-        self.pushButton_5 = QPushButton(self.page)
-        self.pushButton_5.setObjectName(u"pushButton_5")
-        self.gridLayout.addWidget(self.pushButton_5, 4, 1, 1, 1)
+        self.pushButton2 = QPushButton(self.page)
+        self.pushButton2.setObjectName(u"pushButton_2")
+        self.gridLayout.addWidget(self.pushButton2, 2, 1, 1, 1)
 
-        self.pushButton_6 = QPushButton(self.page)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.gridLayout.addWidget(self.pushButton_6, 5, 1, 1, 1)
+        self.pushButton3 = QPushButton(self.page)
+        self.pushButton3.setObjectName(u"pushButton_3")
+        self.gridLayout.addWidget(self.pushButton3, 3, 1, 1, 1)
 
-        self.pushButton_7 = QPushButton(self.page)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.gridLayout.addWidget(self.pushButton_7, 6, 1, 1, 1)
+        self.pushButton4 = QPushButton(self.page)
+        self.pushButton4.setObjectName(u"pushButton_4")
+        self.gridLayout.addWidget(self.pushButton4, 4, 1, 1, 1)
 
-        self.pushButton_8 = QPushButton(self.page)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.gridLayout.addWidget(self.pushButton_8, 7, 1, 1, 1)
+        self.pushButton5 = QPushButton(self.page)
+        self.pushButton5.setObjectName(u"pushButton_5")
+        self.gridLayout.addWidget(self.pushButton5, 5, 1, 1, 1)
 
-        self.pushButton_9 = QPushButton(self.page)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.gridLayout.addWidget(self.pushButton_9, 8, 1, 1, 1)
+        self.pushButton6 = QPushButton(self.page)
+        self.pushButton6.setObjectName(u"pushButton_6")
+        self.gridLayout.addWidget(self.pushButton6, 6, 1, 1, 1)
 
-        self.pushButton_10 = QPushButton(self.page)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.gridLayout.addWidget(self.pushButton_10, 9, 1, 1, 1)
- 
+        self.pushButton7 = QPushButton(self.page)
+        self.pushButton7.setObjectName(u"pushButton_7")
+        self.gridLayout.addWidget(self.pushButton7, 7, 1, 1, 1)
+
+        self.pushButton8 = QPushButton(self.page)
+        self.pushButton8.setObjectName(u"pushButtun_8")
+        self.gridLayout.addWidget(self.pushButton8, 8, 1, 1, 1)
+
+        self.pushButton9 = QPushButton(self.page)
+        self.pushButton9.setObjectName(u"pushButton_9")
+        self.gridLayout.addWidget(self.pushButton9, 9, 1, 1, 1)
+
         self.stackedWidget.addWidget(self.page)
 
 ################################  stack - 1 Button and label ends   ##################################
@@ -193,7 +203,7 @@ class Ui_MainWindow(object):
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
         palette4 = QPalette()
-        brush13 = QBrush(QColor(246, 211, 45, 255))
+        brush13= QBrush(QColor(246, 211, 45, 255))
         brush13.setStyle(Qt.SolidPattern)
         palette4.setBrush(QPalette.Active, QPalette.Window, brush13)
         self.page_2.setPalette(palette4)
@@ -202,12 +212,8 @@ class Ui_MainWindow(object):
 #################################   stack - 2   timer   #############################################
 
         self.horizontalLayout.addWidget(self.stackedWidget)
-
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.stackedWidget.setCurrentIndex(0)
 
-#       self.retranslateUi(MainWindow)
-
         QMetaObject.connectSlotsByName(MainWindow)
-

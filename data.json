@@ -5,8 +5,8 @@
     "10:00 AM" : "work",
     "11:00 AM" : "journal",
     "04:00 PM" : "gym",
-    "09:10 PM" : "dinner",
-    "09:20 PM" : "dinner",
+    "06:00 PM" : "snacks",
+    "06:30 PM" : "work",
     "09:30 PM" : "dinner",
     "10:00 PM" : "sleep"
 }
