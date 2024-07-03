@@ -13,13 +13,13 @@ for key,value in data.items(): # convert into dict items
      task.append(value)
 
 '''
-     #col_0 = time
-for i in range(len(time)):
-            timeWidget = QLabel()
-            timeWidget.setText(time[i])
-            timeWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+     #col_0 = 
+for i in range(len()):
+            Widget = QLabel()
+            Widget.setText(time[i])
+            Widget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
-            schedule.addWidget(timeWidget,i,0)
+            schedule.addWidget(Widget,i,0)
 
       #col_1 = schedule
 for i in range(len(task)):
@@ -42,30 +42,37 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def retranslateUi(self):
         self.setWindowTitle("MainWindow")
 
-        self.label.setText("Task")
-        self.label_2.setText("Task")
-        self.label_3.setText("Task")
-        self.label_4.setText("Task")
-        self.label_5.setText("Task")
-        self.label_6.setText("Task")
-        self.label_7.setText("Task")
-        self.label_8.setText("Task")
-        self.label_9.setText("Task")
-        self.label_10.setText("Task")
-        self.label_11.setText("Task")
+        self.option1.setText('schedule')
+        self.option1.clicked.connect(self.showSchedule)
 
-        self.pushButton.setText("PushButton")
-        self.pushButton_2.setText("PushButton")
-        self.pushButton_12.setText("PushButton")
-        self.pushButton_3.setText("PushButton")
-        self.pushButton_14.setText("PushButton")
-        self.pushButton_6.setText("PushButton")
-        self.pushButton_7.setText("PushButton")
-        self.pushButton_8.setText("PushButton")
-        self.pushButton_9.setText("PushButton")
-        self.pushButton_10.setText("PushButton")
-        self.pushButton_11.setText("PushButton")
-    
+        self.label.setText(task[0])
+        self.label_2.setText(task[1])
+        self.label_3.setText(task[2])
+        self.label_4.setText(task[3])
+        self.label_5.setText(task[4])
+        self.label_6.setText(task[5])
+        self.label_7.setText(task[6])
+        self.label_8.setText(task[7])
+        self.label_9.setText(task[8])
+        self.label_10.setText(task[9])
+
+        self.pushButton.setText(time[0])
+        self.pushButton_2.setText(time[1])
+        self.pushButton_3.setText(time[2])
+        self.pushButton_4.setText(time[3])
+        self.pushButton_5.setText(time[4])
+        self.pushButton_6.setText(time[5])
+        self.pushButton_7.setText(time[6])
+        self.pushButton_8.setText(time[7])
+        self.pushButton_9.setText(time[8])
+        self.pushButton_10.setText(time[9])
+
+
+    def showSchedule(self):
+        if self.stackedWidget.currentIndex() == 0:
+            self.stackedWidget.setCurrentIndex(1)
+        else:
+            self.stackedWidget.setCurrentIndex(0)
 
 app = QApplication([])
 
