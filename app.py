@@ -51,16 +51,16 @@ def retranslateUi(self):
         self.label8.setText(task[8])
         self.label9.setText(task[9])
 
-        self.pushButton0.setText(time[0])
-        self.pushButton1.setText(time[1])
-        self.pushButton2.setText(time[2])
-        self.pushButton3.setText(time[3])
-        self.pushButton4.setText(time[4])
-        self.pushButton5.setText(time[5])
-        self.pushButton6.setText(time[6])
-        self.pushButton7.setText(time[7])
-        self.pushButton8.setText(time[8])
-        self.pushButton9.setText(time[9])
+        self.push_button_0.setText(time[0])
+        self.push_button_1.setText(time[1])
+        self.push_button_2.setText(time[2])
+        self.push_button_3.setText(time[3])
+        self.push_button_4.setText(time[4])
+        self.push_button_5.setText(time[5])
+        self.push_button_6.setText(time[6])
+        self.push_button_7.setText(time[7])
+        self.push_button_8.setText(time[8])
+        self.push_button_9.setText(time[9])
 '''
 
 class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
@@ -72,18 +72,17 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
         self.retranslateUiGui()
 
         self.option1.clicked.connect(self.showSchedule)
-        
-
-        self.pushButton0.clicked.connect(self.action(self.label0))
-        self.pushButton1.clicked.connect(self.action(self.label1))
-        self.pushButton2.clicked.connect(self.action(self.label2))
-        self.pushButton3.clicked.connect(self.action(self.label3))
-        self.pushButton4.clicked.connect(self.action(self.label4))
-        self.pushButton5.clicked.connect(self.action(self.label5))
-        self.pushButton6.clicked.connect(self.action(self.label6))
-        self.pushButton7.clicked.connect(self.action(self.label7))
-        self.pushButton8.clicked.connect(self.action(self.label8))
-        self.pushButton9.clicked.connect(self.action(self.label9))
+    
+        self.push_button_0.clicked.connect(self.action(self.label0))
+        self.push_button_1.clicked.connect(self.action(self.label1))
+        self.push_button_2.clicked.connect(self.action(self.label2))
+        self.push_button_3.clicked.connect(self.action(self.label3))
+        self.push_button_4.clicked.connect(self.action(self.label4))
+        self.push_button_5.clicked.connect(self.action(self.label5))
+        self.push_button_6.clicked.connect(self.action(self.label6))
+        self.push_button_7.clicked.connect(self.action(self.label7))
+        self.push_button_8.clicked.connect(self.action(self.label8))
+        self.push_button_9.clicked.connect(self.action(self.label9))
 
 
     def retranslateUiGui(self):
@@ -102,16 +101,16 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
         self.label8.setText(task[8])
         self.label9.setText(task[9])
 
-        self.pushButton0.setText(time[0])
-        self.pushButton1.setText(time[1])
-        self.pushButton2.setText(time[2])
-        self.pushButton3.setText(time[3])
-        self.pushButton4.setText(time[4])
-        self.pushButton5.setText(time[5])
-        self.pushButton6.setText(time[6])
-        self.pushButton7.setText(time[7])
-        self.pushButton8.setText(time[8])
-        self.pushButton9.setText(time[9])
+        self.push_button_0.setText(time[0])
+        self.push_button_1.setText(time[1])
+        self.push_button_2.setText(time[2])
+        self.push_button_3.setText(time[3])
+        self.push_button_4.setText(time[4])
+        self.push_button_5.setText(time[5])
+        self.push_button_6.setText(time[6])
+        self.push_button_7.setText(time[7])
+        self.push_button_8.setText(time[8])
+        self.push_button_9.setText(time[9])
 
     def showSchedule(self):
         print('show schedule')
@@ -125,13 +124,9 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
         time = QTime()
         print(time.currentTime())
 
-        
-
 app = QApplication([])
 
 window = MainWindow()
 window.show()
 
 app.exec()
-
-
