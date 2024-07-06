@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QVBoxLayout, QLabel,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
-    QWidget)
+    QWidget, QAbstractButton)
 
 from edit import *
 
@@ -30,68 +30,6 @@ from edit import *
 '''
 
 '''
-        self.label_0 = QLabel(self.page1)
-        self.label_0.setObjectName("label_0")
-        self.label_0.setScaledContents(False)
-        self.label_0.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_0, 0, 0, 1, 1)
-
-        self.label_1 = QLabel(self.page1)
-        self.label_1.setObjectName(u"label_1")
-        self.label_1.setScaledContents(False)
-        self.label_1.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_1, 1, 0, 1, 1)
-
-        self.label_2 = QLabel(self.page1)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setScaledContents(False)
-        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_2, 2, 0, 1, 1)
-
-        self.label_3 = QLabel(self.page1)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setScaledContents(False)
-        self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_3, 3, 0, 1, 1)
-
-        self.label_4 = QLabel(self.page1)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setScaledContents(False)
-        self.label_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_4, 4, 0, 1, 1)
-
-        self.label_5 = QLabel(self.page1)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setScaledContents(False)
-        self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_5, 5, 0, 1, 1)
-
-        self.label_6 = QLabel(self.page1)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setScaledContents(False)
-        self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_6, 6, 0, 1, 1)
-
-        self.label_7 = QLabel(self.page1)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setScaledContents(False)
-        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_7, 7, 0, 1, 1)
-
-
-        self.label_8 = QLabel(self.page1)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setScaledContents(False)
-        self.label_8.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_8, 8, 0, 1, 1)
-
-        self.label_9 = QLabel(self.page1)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setScaledContents(False)
-        self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.page1_layout.addWidget(self.label_9, 9, 0, 1, 1)
-
-        ########### label ends
 
         self.push_button_0 = QPushButton(self.page1)
         self.push_button_0.setObjectName(u"push_button_0")
@@ -132,9 +70,7 @@ from edit import *
         self.push_button_9 = QPushButton(self.page1)
         self.push_button_9.setObjectName(u"push_button_9")
         self.page1_layout.addWidget(self.push_button_9, 9, 1, 1, 1)
-
 '''
-
 
 class Label(QLabel):
         def __init__(self,parent=None,text='label'):
@@ -166,14 +102,15 @@ class Ui_MainWindow(object):
         self.menuWidget.setMinimumSize(QSize(150, 20))
         self.menuWidget.setMaximumSize(QSize(1000000, 1000000))
         
-        palette1 = QPalette()
+        self.palette1 = QPalette()
         button_brush1 = QBrush(QColor(Qt.black))
         button_brush2 = QBrush(QColor(Qt.white))
 #        button_brush.setStyle(Qt.SolidPattern) 
                        # color role       brush  
-        palette1.setBrush(QPalette.Window, button_brush1)
-        palette1.setBrush(QPalette.Highlight, button_brush2) 
-        self.menuWidget.setPalette(palette1)
+        self.palette1.setBrush(QPalette.Window, button_brush1)
+        self.palette1.setBrush(QPalette.Highlight, button_brush2) 
+        
+        self.menuWidget.setPalette(self.palette1)
         self.menuWidget.setAutoFillBackground(True)
 
         self.menuLayout = QVBoxLayout(self.menuWidget)
@@ -207,21 +144,9 @@ class Ui_MainWindow(object):
         self.label_widget = QWidget()
         self.label_layout = QVBoxLayout(self.label_widget)
         self.page1_layout.addWidget(self.label_widget)
-
     
-
         self.button_widget = QWidget()
         self.button_layout = QVBoxLayout(self.button_widget)
-        label = QLabel("world")
-        self.button_layout.addWidget(label)
-        label = QLabel("hell241o")
-        self.button_layout.addWidget(label)
-        label = QLabel("hel341lo")
-        self.button_layout.addWidget(label)
-        label = QLabel("hell1432o")
-        self.button_layout.addWidget(label)
-        label = QLabel("hell12312")
-        self.button_layout.addWidget(label)
         self.page1_layout.addWidget(self.button_widget)
         
         self.stackedWidget.addWidget(self.page1)
