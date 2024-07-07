@@ -29,48 +29,6 @@ from edit import *
         self.buttonBox_menu.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
 '''
 
-'''
-
-        self.push_button_0 = QPushButton(self.page1)
-        self.push_button_0.setObjectName(u"push_button_0")
-        self.page1_layout.addWidget(self.push_button_0, 0, 1, 1, 1)
-
-        self.push_button_1 = QPushButton(self.page1)
-        self.push_button_1.setObjectName(u"push_button_1")
-        self.page1_layout.addWidget(self.push_button_1, 1, 1, 1, 1)
-
-        self.push_button_2 = QPushButton(self.page1)
-        self.push_button_2.setObjectName(u"push_button_2")
-        self.page1_layout.addWidget(self.push_button_2, 2, 1, 1, 1)
-
-        self.push_button_3 = QPushButton(self.page1)
-        self.push_button_3.setObjectName(u"push_button_3")
-        self.page1_layout.addWidget(self.push_button_3, 3, 1, 1, 1)
-
-        self.push_button_4 = QPushButton(self.page1)
-        self.push_button_4.setObjectName(u"push_button_4")
-        self.page1_layout.addWidget(self.push_button_4, 4, 1, 1, 1)
-
-        self.push_button_5 = QPushButton(self.page1)
-        self.push_button_5.setObjectName(u"push_button_5")
-        self.page1_layout.addWidget(self.push_button_5, 5, 1, 1, 1)
-
-        self.push_button_6 = QPushButton(self.page1)
-        self.push_button_6.setObjectName(u"push_button_6")
-        self.page1_layout.addWidget(self.push_button_6, 6, 1, 1, 1)
-
-        self.push_button_7 = QPushButton(self.page1)
-        self.push_button_7.setObjectName(u"push_button_7")
-        self.page1_layout.addWidget(self.push_button_7, 7, 1, 1, 1)
-
-        self.push_button_8 = QPushButton(self.page1)
-        self.push_button_8.setObjectName(u"pushButtun_8")
-        self.page1_layout.addWidget(self.push_button_8, 8, 1, 1, 1)
-
-        self.push_button_9 = QPushButton(self.page1)
-        self.push_button_9.setObjectName(u"push_button_9")
-        self.page1_layout.addWidget(self.push_button_9, 9, 1, 1, 1)
-'''
 
 class Label(QLabel):
         def __init__(self,parent=None,text='label'):
@@ -99,7 +57,7 @@ class Ui_MainWindow(object):
         self.menuWidget = QWidget(self.centralwidget) # parent object
         self.menuWidget.setObjectName("menu")
 
-        self.menuWidget.setMinimumSize(QSize(150, 20))
+        self.menuWidget.setMinimumSize(QSize(150, 100))
         self.menuWidget.setMaximumSize(QSize(1000000, 1000000))
         
         self.palette1 = QPalette()
@@ -110,11 +68,13 @@ class Ui_MainWindow(object):
         self.palette1.setBrush(QPalette.Window, button_brush1)
         self.palette1.setBrush(QPalette.Highlight, button_brush2) 
         
+        
         self.menuWidget.setPalette(self.palette1)
         self.menuWidget.setAutoFillBackground(True)
 
         self.menuLayout = QVBoxLayout(self.menuWidget)
         self.menuLayout.setObjectName("menuLayout")
+#        self.menuLayout.setContentsMargins()
 
         self.option1 = QPushButton(self.menuWidget)
         self.option1.setObjectName('option1')
