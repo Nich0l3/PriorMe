@@ -19,7 +19,6 @@ labels=[]
 buttons=[]
 
 class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
-    
     def __init__(self) :
         super().__init__()
         self.setupUiGui(self)
@@ -27,6 +26,12 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
 
         self.add_labels()
         self.add_buttons()
+
+        self.button_group = QButtonGroup()
+        self.button_group_init()
+
+        print(self.button_group.buttons())
+
         self.page1.setPalette(self.palette1)
 
         self.option1.clicked.connect(self.showSchedule)
@@ -51,7 +56,7 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
         print(time.currentTime())
 
     def add_labels(self):
-        labels = [QLabel() for _ in times]  
+        [labels.append(QLabel()) for _ in times]  
         for label, time in zip(labels, times):  
             label.setText(time)
             label.setAlignment(Qt.AlignCenter)
@@ -61,13 +66,21 @@ class MainWindow(QMainWindow, Ui_MainWindow,Ui_ediPanel):
 
 
     def add_buttons(self):
-        buttons = [QPushButton(parent=self.page1, text=task) for task in tasks]
+        [buttons.append(QPushButton(parent=self.page1, text=task)) for task in tasks]
         for button, task in zip(buttons, tasks):  
             self.button_layout.addWidget(button) 
             
         #self.button_layout.addStretch()
 
+    def button_group_init(self):
+        [self.button_group.addButton(button) for button in buttons]
+        self.button_group.buttonClicked.connect(self.edit_box)     
+
+    def edit_box(self):
+        print('hello')
         
+
+
 
 
 app = QApplication([])

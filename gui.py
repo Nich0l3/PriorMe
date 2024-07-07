@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QVBoxLayout, QLabel,
     QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
-    QWidget, QAbstractButton)
+    QWidget, QButtonGroup)
 
 from edit import *
 
@@ -28,15 +28,6 @@ from edit import *
         self.buttonBox_menu.setOrientation(Qt.Orientation.Vertical)
         self.buttonBox_menu.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
 '''
-
-
-class Label(QLabel):
-        def __init__(self,parent=None,text='label'):
-                super().__init__(parent)
-                self.setObjectName("label_0")
-                self.setScaledContents(False)
-                self.setAlignment(Qt.AlignCenter)
-
 
 class Ui_MainWindow(object):
     def setupUiGui(self, MainWindow):

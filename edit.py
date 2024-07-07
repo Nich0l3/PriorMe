@@ -17,56 +17,69 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QDialogButtonBox, QHBoxLayout,
     QLineEdit, QSizePolicy, QSpacerItem, QTimeEdit,
-    QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget, QMainWindow)
 
 class Ui_ediPanel(object):
-    def setupUiEdit(self, ediPanel):
-        if not ediPanel.objectName():
-            ediPanel.setObjectName(u"ediPanel")
-        ediPanel.resize(495, 248)
-        ediPanel.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.verticalLayout = QVBoxLayout(ediPanel)
+    def setupUiEdit(self, editPanel):
+        if not editPanel.objectName():
+            editPanel.setObjectName(u"editPanel")
+        editPanel.resize(495, 244)
+        
+        self.vertical_widget = QWidget(editPanel)
+        self.verticalLayout = QVBoxLayout(self.vertical_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
+        
+        self.horizontal_widget = QWidget()
+        self.horizontalLayout = QHBoxLayout(self.horizontal_widget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-
-        self.timeEdit = QTimeEdit(ediPanel)
+        
+        self.timeEdit = QTimeEdit()
         self.timeEdit.setObjectName(u"timeEdit")
-        self.timeEdit.setMinimumSize(QSize(150, 0))
+#        self.timeEdit.setMinimumSize(QSize(150, 0))
         self.timeEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.timeEdit)
 
-        self.lineEdit = QLineEdit(ediPanel)
+        self.lineEdit = QLineEdit(editPanel)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setMinimumSize(QSize(200, 0))
+#        self.lineEdit.setMinimumSize(QSize(200, 0))
         self.lineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout.addWidget(self.lineEdit)
 
+        self.verticalLayout.addWidget(self.horizontal_widget)
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.buttonBox = QDialogButtonBox(editPanel)
+        self.buttonBox.setObjectName(u"buttonBox")
+        self.buttonBox.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.buttonBox.setAutoFillBackground(False)
+        self.buttonBox.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
+        self.buttonBox.setCenterButtons(False)
 
-        self.buttonBox_edit = QDialogButtonBox(ediPanel)
-        self.buttonBox_edit.setObjectName(u"buttonBox")
-        self.buttonBox_edit.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.buttonBox_edit.setAutoFillBackground(False)
-        self.buttonBox_edit.setStandardButtons(QDialogButtonBox.StandardButton.Cancel|QDialogButtonBox.StandardButton.Ok)
-        self.buttonBox_edit.setCenterButtons(True)
+        self.verticalLayout.addWidget(self.buttonBox)
 
-        self.verticalLayout.addWidget(self.buttonBox_edit)
+        #self.verticalSpacer = QSpacerItem(10, 10, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        #self.verticalLayout.addItem(self.verticalSpacer)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        #self.retranslateUiEdit(editPanel)
+        QMetaObject.connectSlotsByName(editPanel)
 
-        self.verticalLayout.addItem(self.horizontalSpacer)
+class MainWindow(QMainWindow, Ui_ediPanel):
+    def __init__(self):
+        super().__init__()
+        self.setupUiEdit(self)
+        #self.retranslateUiEdit()
 
-        self.retranslateUiEdit(ediPanel)
-
-        QMetaObject.connectSlotsByName(ediPanel)
-
-
-    def retranslateUi(self, ediPanel):
-        ediPanel.setWindowTitle("ediPanel")
+    def retranslateUiEdit(self):
+        self.setWindowTitle("editPanel")
         self.lineEdit.setText("")
-    
+
+
+if __name__ == '__main__':
+    app = QApplication([])
+
+    window = MainWindow()
+    window.show()
+
+    app.exec()
 
